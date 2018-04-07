@@ -70,6 +70,7 @@
  </tile>
  <tile id="22">
   <properties>
+   <property name="cactus" value="1"/>
    <property name="type" value="cactus"/>
   </properties>
  </tile>
@@ -86,6 +87,12 @@
  <tile id="32" probability="10">
   <properties>
    <property name="col" type="bool" value="false"/>
+  </properties>
+ </tile>
+ <tile id="38">
+  <properties>
+   <property name="cactus" value="2"/>
+   <property name="type" value="cactus"/>
   </properties>
  </tile>
  <tile id="40">
@@ -119,6 +126,12 @@
   </properties>
  </tile>
  <tile id="45">
+  <properties>
+   <property name="itemType" value="part"/>
+   <property name="type" value="item"/>
+  </properties>
+ </tile>
+ <tile id="46">
   <properties>
    <property name="itemType" value="part"/>
    <property name="type" value="item"/>

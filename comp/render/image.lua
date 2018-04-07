@@ -59,12 +59,20 @@ function image:draw()
 	end
 end
 
+function image:getX()
+	return self.x-self.ox+self.offx-10
+end
+
+function image:getY()
+	return self.y-self.oy+self.offy-10
+end
+
 function image:getW()
-	return self.w
+	return self.w*2+20
 end
 
 function image:getH()
-	return self.h
+	return self.h*2+20
 end
 
 return image
