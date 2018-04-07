@@ -66,6 +66,11 @@ function topDownController:collisionDetected(cols)
 			col.other.parent.die = true
 			self.parent.stats:getBottle()
 		end
+
+		if col.other.parent.id == "hat" then
+			col.other.parent.die = true
+			self.parent.stats:getHat()
+		end
 	end
 end
 

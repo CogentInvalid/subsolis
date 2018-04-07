@@ -9,6 +9,7 @@ function gameUI:initialize(args)
 	self.healthIcon = getImg("icon-health")
 	self.dangerIcon = getImg("icon-danger")
 	self.bottleIcon = getImg("bottle_filled")
+	self.hatIcon = getImg("hat")
 end
 
 function gameUI:draw(dt)
@@ -33,9 +34,9 @@ function gameUI:draw(dt)
 	love.graphics.setColor(1, .7, .2)
 	if stats.dehydrated then love.graphics.setColor(1, .4, .2) end
 	love.graphics.rectangle("fill", x+32, y, (stats.heat/stats.maxHeat)*200, 24)
-	if stats.dehydrated then
+	if stats.hasHat then
 		love.graphics.setColor(1,1,1)
-		love.graphics.draw(self.dangerIcon, x+232, y)
+		love.graphics.draw(self.hatIcon, x+240, y)
 	end
 
 	--water
@@ -47,6 +48,10 @@ function gameUI:draw(dt)
 	love.graphics.setColor(.4, .4, 1)
 	local regularWater = math.min((stats.water/100), 1)
 	love.graphics.rectangle("fill", x+32, y, regularWater*200, 24)
+	if stats.dehydrated then
+		love.graphics.setColor(1,1,1)
+		love.graphics.draw(self.dangerIcon, x+232, y)
+	end
 	if stats.hasBottle then
 		x = 10; y = 730
 		love.graphics.setColor(1,1,1)

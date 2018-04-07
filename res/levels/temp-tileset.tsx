@@ -52,4 +52,9 @@
    <property name="type" value="bottle"/>
   </properties>
  </tile>
+ <tile id="41">
+  <properties>
+   <property name="type" value="hat"/>
+  </properties>
+ </tile>
 </tileset>

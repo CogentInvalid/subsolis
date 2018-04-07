@@ -22,10 +22,13 @@ function playerStats:update(dt)
 		if self.invuln < 0 then self.invuln = 0 end
 	end
 
+	local heatRate = (100/30)
+	if self.hasHat then heatRate = heatRate*0.6 end
+
 	if self.parent.shadeable.inShade then
 		self.heat = self.heat - (100/25)*dt
 	else
-		self.heat = self.heat + (100/30)*dt
+		self.heat = self.heat + heatRate*dt
 	end
 
 	if self.heat > 90 then
@@ -50,6 +53,10 @@ end
 function playerStats:getBottle()
 	self.hasBottle = true
 	self.maxWater = 140
+end
+
+function playerStats:getHat()
+	self.hasHat = true
 end
 
 function playerStats:addWater(amt)
