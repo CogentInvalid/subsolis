@@ -14,7 +14,7 @@ end
 function playerStats:update(dt)
 
 	if self.parent.shadeable.inShade then
-		self.heat = self.heat - (100/40)*dt
+		self.heat = self.heat - (100/30)*dt
 	else
 		self.heat = self.heat + (100/30)*dt
 	end
