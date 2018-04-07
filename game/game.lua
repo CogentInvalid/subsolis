@@ -5,13 +5,14 @@ local tiledLoader = require "game/tiledLoader"
 local gameUI = require "game/gameUI"
 
 local player = require "ent/player"
+local snake = require "ent/snake"
 local wall = require "ent/wall"
 
 local game = {}
 
 function game:init()
 
-	--love.graphics.setBackgroundColor(252/255,231/255,133/255)
+	love.graphics.setBackgroundColor(252/255,231/255,133/255)
 
 	--timestep related stuff
 	dt = 0.01
@@ -30,7 +31,8 @@ function game:init()
 	--entities
 	self.ent = {}
 	--add player
-	self.player = self:addEnt(player, {x=692+768, y=692+768})
+	self.player = self:addEnt(player, {x=1460, y=1460})
+	self:addEnt(snake, {x=1500, y=1600, target=self.player})
 	self.ui = self:addSystem(gameUI, {player=self.player})
 	
 	self.tiledLoader:loadLevel("test")
@@ -79,7 +81,7 @@ end
 
 function game:update(delta)
 
-	debug(love.timer.getAverageDelta())
+	--debug(love.timer.getAverageDelta())
 
 	--timestep stuff
 	if self.paused == false then accum = accum + delta end
