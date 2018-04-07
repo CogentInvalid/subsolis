@@ -30,12 +30,13 @@ function image:initialize(args)
 	end
 
 	self.animation = args.animation
+	self.animSpeed = args.animSpeed or 1
 	
 end
 
 function image:update(dt)
 	renderable.update(self, dt)
-	if self.animation then self.animation:update(dt) end
+	if self.animation then self.animation:update(self.animSpeed*dt) end
 end
 
 function image:setQuad(xPos, yPos, w, h, tileWidth, tileHeight)
@@ -48,7 +49,7 @@ function image:draw()
 	local sx = self.sx; local sy = self.sx
 
 	if self.animation then
-		self.animation:draw(self.img, self.x+self.ox*self.sx, self.y+self.oy, 0, self.sx, sy)
+		self.animation:draw(self.img, self.x+self.offx, self.y+self.offy, self.rotation, self.sx, sy, self.ox, self.oy)
 	else
 		if self.quad ~= nil then
 			love.graphics.draw(self.img, self.quad, math.floor(self.x), math.floor(self.y), self.rotation, self.sx, sy, self.ox, self.oy)

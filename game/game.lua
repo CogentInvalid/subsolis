@@ -32,7 +32,7 @@ function game:init()
 	self.ent = {}
 	--add player
 	self.player = self:addEnt(player, {x=1460, y=1460})
-	self:addEnt(snake, {x=1500, y=1600, target=self.player})
+	--self:addEnt(snake, {x=1500, y=1600, target=self.player})
 	self.ui = self:addSystem(gameUI, {player=self.player})
 	
 	self.tiledLoader:loadLevel("test")
@@ -135,7 +135,7 @@ function game:draw()
 	self.showHitboxes = false
 	if self.showHitboxes then
 		love.graphics.setColor(1,0,0,0.7)
-		local cols, len = self.colMan.world:queryRect(-1000, -1000, 2000, 2000)
+		local cols, len = self.colMan.world:queryRect(0, 0, 4000, 4000)
 		for i, phys in ipairs(cols) do
 			love.graphics.rectangle("fill", phys.x, phys.y, phys.w, phys.h)
 		end

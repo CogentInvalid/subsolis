@@ -138,4 +138,9 @@
    <property name="type" value="shade"/>
   </properties>
  </tile>
+ <tile id="52">
+  <properties>
+   <property name="type" value="snake"/>
+  </properties>
+ </tile>
 </tileset>

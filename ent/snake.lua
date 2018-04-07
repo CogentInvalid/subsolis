@@ -1,8 +1,11 @@
 local gameObject = require "ent/gameObject"
 local snake = class("snake", gameObject)
 
+local anim8 = require "libs/anim8"
+
 local physics = require "comp/physics"
-local rectangle = require "comp/render/rectangle"
+--local rectangle = require "comp/render/rectangle"
+local image = require "comp/render/image"
 local snakeAI = require "comp/snakeAI"
 
 function snake:initialize(args)
@@ -13,14 +16,22 @@ function snake:initialize(args)
 	local y = args.y or 100
 
 	self.phys = physics:new{parent=self, x=args.x, y=args.y, w=32, h=32, solidity="none"}
-	self.rect = rectangle:new{
+
+	local g = anim8.newGrid(24, 24, 96, 24)
+	local anim = anim8.newAnimation(g('1-4',1), 0.15)
+
+	self.img = image:new{
 		parent=self, posParent=self.phys,
-		w=32, h=32,
-		color={r=0.2, g=0.5, b=0.5}
+		img="snake",
+		drawLayer = args.drawLayer, sx=2,
+		animation = anim,
+		ox = 12, oy = 12,
+		offx = 14, offy = 14,
+		rotation = 0
 	}
 	self.ai = snakeAI:new{parent=self, target=args.target}
 	
-	self:addComponent(self.rect)
+	self:addComponent(self.img)
 	self:addComponent(self.phys)
 	self:addComponent(self.ai)
 
