@@ -10,9 +10,6 @@ local fade = require "comp/fade"
 function attack:initialize(args)
 	gameObject.initialize(self, args)
 	self.id = "attack"
-	
-	--args.x = args.x - 8
-	--args.y = args.y - 8
 
 	local phys = physics:new{parent=self, x=args.x, y=args.y, w=16, h=16, col=false}
 	
@@ -26,8 +23,8 @@ function attack:initialize(args)
 
 	self:addComponent(self.img)
 	self:addComponent(phys)
-	self:addComponent(lifespan:new{parent=self, time=0.25})
-	self:addComponent(fade:new{parent=self, dir=-4})
+	self:addComponent(lifespan:new{parent=self, time=0.2})
+	self:addComponent(fade:new{parent=self, dir=-5})
 end
 
 return attack
