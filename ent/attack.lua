@@ -11,7 +11,7 @@ function attack:initialize(args)
 	gameObject.initialize(self, args)
 	self.id = "attack"
 
-	local phys = physics:new{parent=self, x=args.x-16, y=args.y-16, w=32, h=32, col=false}
+	local phys = physics:new{parent=self, x=args.x-16, y=args.y-16, w=32, h=32, col=false, solidity="none"}
 	
 	self.img = image:new{
 		parent=self, img="slash",

@@ -26,7 +26,9 @@ function physics:initialize(args)
 	self.col = args.col --does this collide with other objects?
 	if args.col == nil then self.col = true end
 
-	self.world = self.game.colMan:addToWorld(self)
+	if self.col or self.solidity then
+		self.world = self.game.colMan:addToWorld(self)
+	end
 end
 
 function physics:destroy()

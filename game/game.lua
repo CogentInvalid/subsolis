@@ -79,7 +79,7 @@ end
 
 function game:update(delta)
 
-	debug(love.timer.getAverageDelta())
+	--debug(love.timer.getAverageDelta())
 
 	--timestep stuff
 	if self.paused == false then accum = accum + delta end

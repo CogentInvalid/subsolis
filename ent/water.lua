@@ -8,7 +8,7 @@ function water:initialize(args)
 	gameObject.initialize(self, args)
 	self.id = "water"
 	
-	local phys = physics:new{parent=self, x=args.x, y=args.y, w=48, h=48, col=false}
+	local phys = physics:new{parent=self, x=args.x, y=args.y, w=48, h=48, col=false, solidity="none"}
 	
 	self.img = image:new{
 		parent=self, img=args.img,
