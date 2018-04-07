@@ -7,7 +7,7 @@ function playerStats:initialize(args)
 	
 	self.maxHP = 100; self.hp = self.maxHP
 	self.invuln = 0
-	self.maxWater = 100; self.water = self.maxWater
+	self.maxWater = 80; self.water = self.maxWater
 	self.maxHeat = 100; self.heat = 0
 	self.hasBottle = false
 	self.dehydrated = false
@@ -22,11 +22,11 @@ function playerStats:update(dt)
 		if self.invuln < 0 then self.invuln = 0 end
 	end
 
-	local heatRate = (100/30)
+	local heatRate = (100/24)
 	if self.hasHat then heatRate = heatRate*0.6 end
 
 	if self.parent.shadeable.inShade then
-		self.heat = self.heat - (100/25)*dt
+		self.heat = self.heat - (100/20)*dt
 	else
 		self.heat = self.heat + heatRate*dt
 	end
@@ -56,7 +56,7 @@ end
 
 function playerStats:getBottle()
 	self.hasBottle = true
-	self.maxWater = 140
+	self.maxWater = self.maxWater + 40
 end
 
 function playerStats:getHat()

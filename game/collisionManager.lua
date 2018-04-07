@@ -16,7 +16,11 @@ end
 function collisionManager:update(dt)
 	
 	--for each physics component
-	for i, phys in ipairs(self.world:getItems()) do
+	local items = self.world:getItems()
+
+	for i=1, #items do
+		local phys = items[i]
+	--for i, phys in ipairs(self.world:getItems()) do
 		--collide that thing
 		if phys.col then
 			self:collide(phys)
@@ -43,7 +47,9 @@ function collisionManager:collide(e1)
 	local sideHit = false
 	
 	--for each entry in collideOrder:
-	for q, cond in ipairs(e1.collideOrder) do
+	for q=1, #e1.collideOrder do
+		local cond = e1.collideOrder[q]
+	--for q, cond in ipairs(e1.collideOrder) do
 		
 		for i, e2 in lume.ripairs(cols) do
 			if e1 ~= e2 and cond(e2) then

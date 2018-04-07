@@ -65,4 +65,22 @@
    <property name="type" value="item"/>
   </properties>
  </tile>
+ <tile id="43">
+  <properties>
+   <property name="itemType" value="part"/>
+   <property name="type" value="item"/>
+  </properties>
+ </tile>
+ <tile id="44">
+  <properties>
+   <property name="itemType" value="part"/>
+   <property name="type" value="item"/>
+  </properties>
+ </tile>
+ <tile id="45">
+  <properties>
+   <property name="itemType" value="part"/>
+   <property name="type" value="item"/>
+  </properties>
+ </tile>
 </tileset>

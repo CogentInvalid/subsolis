@@ -49,7 +49,7 @@ function gameUI:draw(dt)
 	love.graphics.setColor(.3, .3, .35)
 	love.graphics.rectangle("fill", x+32, y, 200, 24)
 	love.graphics.setColor(.4, .4, 1)
-	local regularWater = math.min((stats.water/100), 1)
+	local regularWater = math.min((stats.water/80), 1)
 	love.graphics.rectangle("fill", x+32, y, regularWater*200, 24)
 	if stats.dehydrated then
 		love.graphics.setColor(1,1,1)
@@ -62,10 +62,10 @@ function gameUI:draw(dt)
 		love.graphics.setColor(1,1,1)
 		love.graphics.draw(self.bottleIcon, x, y)
 		love.graphics.setColor(.3, .3, .35)
-		love.graphics.rectangle("fill", x+32, y, 80, 24)
+		love.graphics.rectangle("fill", x+32, y, 100, 24)
 		love.graphics.setColor(.4, .4, 1)
-		local bottleWater = math.max((stats.water-100)/40, 0)
-		love.graphics.rectangle("fill", x+32, y, bottleWater*80, 24)
+		local bottleWater = math.max((stats.water-80)/40, 0)
+		love.graphics.rectangle("fill", x+32, y, bottleWater*100, 24)
 	end
 
 	--parts
