@@ -31,6 +31,7 @@ function game:init()
 	
 	--self:makeLevel()
 	self.tiledLoader:loadLevel("test")
+	self.camMan:setBounds(24, 24, 4000, 4000)
 	
 	--make camera follow player
 	local phys = self.player:getComponent("physics")
