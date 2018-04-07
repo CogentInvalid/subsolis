@@ -12,4 +12,14 @@
    <property name="type" value="shade"/>
   </properties>
  </tile>
+ <tile id="10">
+  <properties>
+   <property name="col" type="bool" value="false"/>
+  </properties>
+ </tile>
+ <tile id="11">
+  <properties>
+   <property name="col" type="bool" value="false"/>
+  </properties>
+ </tile>
 </tileset>
