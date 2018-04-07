@@ -9,11 +9,12 @@ function inputManager:initialize(parent)
 		w = "up",
 		s = "down",
 		m = "mute",
-		q = "debug"
+		q = "debug",
+		mouse1 = "attack"
 	}
 	
 	self.map = {
-		jump = self.jump,
+		attack = self.attack,
 		mute = self.mute,
 		debug = self.debug
 	}
@@ -27,6 +28,17 @@ function inputManager:keypressed(key)
 	if self.map[self.bind[key]] ~= nil then
 		self.map[self.bind[key]](self)
 	end
+end
+
+function inputManager:mousepressed(x, y, button)
+	if self.map[self.bind["mouse"..button]] ~= nil then
+		self.map[self.bind["mouse"..button]](self, x, y)
+	end
+end
+
+function inputManager:attack(x, y)
+	x, y = self.game.camMan:worldPos(x, y)
+	self.game.player.attack:attack(x, y)
 end
 
 function inputManager:debug()

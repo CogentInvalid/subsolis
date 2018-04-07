@@ -159,7 +159,8 @@ function game:keypressed(key)
 
 end
 
-function game:mousepressed(button)
+function game:mousepressed(x, y, button)
+	self.inputMan:mousepressed(x, y, button)
 end
 
 function game:addSystem(sys, args)
