@@ -61,6 +61,12 @@ return {
           }
         },
         {
+          id = 22,
+          properties = {
+            ["type"] = "cactus"
+          }
+        },
+        {
           id = 30,
           properties = {
             ["col"] = false

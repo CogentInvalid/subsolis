@@ -21,6 +21,7 @@ function gameUI:draw(dt)
 	love.graphics.setColor(.35, .35, .2)
 	love.graphics.rectangle("fill", x, y, 200, 24)
 	love.graphics.setColor(1, .7, .2)
+	if stats.dehydrated then love.graphics.setColor(1, .4, .2) end
 	love.graphics.rectangle("fill", x, y, (stats.heat/stats.maxHeat)*200, 24)
 
 	--water

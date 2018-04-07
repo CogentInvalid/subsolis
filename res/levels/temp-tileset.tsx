@@ -22,6 +22,11 @@
    <property name="col" type="bool" value="false"/>
   </properties>
  </tile>
+ <tile id="22">
+  <properties>
+   <property name="type" value="cactus"/>
+  </properties>
+ </tile>
  <tile id="30">
   <properties>
    <property name="col" type="bool" value="false"/>
