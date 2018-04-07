@@ -8,6 +8,7 @@ function gameUI:initialize(args)
 	self.waterIcon = getImg("icon-water")
 	self.healthIcon = getImg("icon-health")
 	self.dangerIcon = getImg("icon-danger")
+	self.bottleIcon = getImg("bottle_filled")
 end
 
 function gameUI:draw(dt)
@@ -15,7 +16,7 @@ function gameUI:draw(dt)
 	local x, y = 0, 0
 
 	--health
-	x = 10; y = 670
+	x = 10; y = 640
 	love.graphics.setColor(1,1,1)
 	love.graphics.draw(self.healthIcon, x, y)
 	love.graphics.setColor(.35, .2, .2)
@@ -24,7 +25,7 @@ function gameUI:draw(dt)
 	love.graphics.rectangle("fill", x+32, y, (stats.hp/stats.maxHP)*200, 24)
 
 	--heat
-	x = 10; y = 700
+	x = 10; y = 670
 	love.graphics.setColor(1,1,1)
 	love.graphics.draw(self.heatIcon, x, y)
 	love.graphics.setColor(.35, .35, .2)
@@ -38,13 +39,24 @@ function gameUI:draw(dt)
 	end
 
 	--water
-	x = 10; y = 730
+	x = 10; y = 700
 	love.graphics.setColor(1,1,1)
 	love.graphics.draw(self.waterIcon, x, y)
 	love.graphics.setColor(.3, .3, .35)
 	love.graphics.rectangle("fill", x+32, y, 200, 24)
 	love.graphics.setColor(.4, .4, 1)
-	love.graphics.rectangle("fill", x+32, y, (stats.water/stats.maxWater)*200, 24)
+	local regularWater = math.min((stats.water/100), 1)
+	love.graphics.rectangle("fill", x+32, y, regularWater*200, 24)
+	if stats.hasBottle then
+		x = 10; y = 730
+		love.graphics.setColor(1,1,1)
+		love.graphics.draw(self.bottleIcon, x, y)
+		love.graphics.setColor(.3, .3, .35)
+		love.graphics.rectangle("fill", x+32, y, 80, 24)
+		love.graphics.setColor(.4, .4, 1)
+		local bottleWater = math.max((stats.water-100)/40, 0)
+		love.graphics.rectangle("fill", x+32, y, bottleWater*80, 24)
+	end
 end
 
 return gameUI

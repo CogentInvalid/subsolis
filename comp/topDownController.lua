@@ -61,6 +61,11 @@ function topDownController:collisionDetected(cols)
 		if col.other.parent.id == "water" then
 			self.parent.stats.inWater = true
 		end
+
+		if col.other.parent.id == "bottle" then
+			col.other.parent.die = true
+			self.parent.stats:getBottle()
+		end
 	end
 end
 

@@ -47,4 +47,9 @@
    <property name="col" type="bool" value="false"/>
   </properties>
  </tile>
+ <tile id="40">
+  <properties>
+   <property name="type" value="bottle"/>
+  </properties>
+ </tile>
 </tileset>
