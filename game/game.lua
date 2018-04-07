@@ -2,6 +2,7 @@ local collisionManager = require "game/collisionManager"
 local cameraManager = require "game/cameraManager"
 local inputManager = require "game/inputManager"
 local tiledLoader = require "game/tiledLoader"
+local gameUI = require "game/gameUI"
 
 local player = require "ent/player"
 local wall = require "ent/wall"
@@ -28,6 +29,8 @@ function game:init()
 	self.ent = {}
 	--add player
 	self.player = self:addEnt(player, {x=500, y=500})
+
+	self.ui = self:addSystem(gameUI, {player=self.player})
 	
 	--self:makeLevel()
 	self.tiledLoader:loadLevel("test")
@@ -91,7 +94,7 @@ function game:update(delta)
 		
 		--update systems
 		for i, system in ipairs(self.system) do
-			system:update(dt)
+			if system.update then system:update(dt) end
 		end
 
 		accum = accum - 0.01

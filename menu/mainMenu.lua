@@ -18,7 +18,7 @@ function mainMenu:draw()
 	love.graphics.rectangle("fill", 0, 0, 2000, 2000)
 
 	love.graphics.setColor(245/255, 245/255, 222/255)
-	love.graphics.circle("fill", 500, 300, 180)
+	love.graphics.circle("fill", 512, 300, 180)
 
 	love.graphics.setColor(1, 1, 0.5)
 	love.graphics.rectangle("fill", 0, 500, 2000, 2000)

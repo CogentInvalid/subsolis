@@ -1,14 +1,14 @@
 local component = require "comp/component"
-local playerComponent = class("playerComponent", component)
+local shadeable = class("shadeable", component)
 
-function playerComponent:initialize(args)
+function shadeable:initialize(args)
 	component.initialize(self, args)
-	self.type = "playerComponent"
+	self.type = "shadeable"
 
 	self.inShade = false
 end
 
-function playerComponent:update(dt)
+function shadeable:update(dt)
 	if self.inShade then
 		self.parent.rect.color = {r=0.2, g=0.5, b=0.2}
 	else
@@ -18,7 +18,7 @@ function playerComponent:update(dt)
 	self.inShade = false
 end
 
-function playerComponent:collisionDetected(cols)
+function shadeable:collisionDetected(cols)
 	for i, col in ipairs(cols) do
 		if col.other.parent.id == "shade" then
 			self.inShade = true
@@ -26,4 +26,4 @@ function playerComponent:collisionDetected(cols)
 	end
 end
 
-return playerComponent
+return shadeable

@@ -4,7 +4,8 @@ local player = class("player", gameObject)
 local physics = require "comp/physics"
 local rectangle = require "comp/render/rectangle"
 local topDownController = require "comp/topDownController"
-local playerComponent = require "comp/playerComponent"
+local shadeable = require "comp/shadeable"
+local playerStats = require "comp/playerStats"
 
 function player:initialize(args)
 	gameObject.initialize(self, args)
@@ -20,11 +21,15 @@ function player:initialize(args)
 		color={r=0.2, g=0.7, b=0.2}
 	}
 	self.controller = topDownController:new{parent=self, speed=320}
+	self.stats = playerStats:new{parent=self}
+	self.shadeable = shadeable:new{parent=self}
 	
 	self:addComponent(self.controller)
 	self:addComponent(self.rect)
 	self:addComponent(self.phys)
-	self:addComponent(playerComponent:new{parent=self})
+	self:addComponent(self.stats)
+	self:addComponent(self.shadeable)
+
 end
 
 return player
