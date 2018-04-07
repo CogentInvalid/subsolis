@@ -22,4 +22,19 @@
    <property name="col" type="bool" value="false"/>
   </properties>
  </tile>
+ <tile id="30">
+  <properties>
+   <property name="col" type="bool" value="false"/>
+  </properties>
+ </tile>
+ <tile id="31">
+  <properties>
+   <property name="col" type="bool" value="false"/>
+  </properties>
+ </tile>
+ <tile id="32" probability="10">
+  <properties>
+   <property name="col" type="bool" value="false"/>
+  </properties>
+ </tile>
 </tileset>
