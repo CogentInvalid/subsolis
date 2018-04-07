@@ -4,7 +4,6 @@ local snake = class("snake", gameObject)
 local anim8 = require "libs/anim8"
 
 local physics = require "comp/physics"
---local rectangle = require "comp/render/rectangle"
 local image = require "comp/render/image"
 local snakeAI = require "comp/snakeAI"
 

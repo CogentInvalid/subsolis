@@ -69,12 +69,12 @@ function gameUI:draw(dt)
 	end
 
 	--parts
-	x = 950; y = 730
+	x = 935; y = 730
 	love.graphics.setColor(1,1,1)
 	love.graphics.draw(self.partIcon, x, y)
 	love.graphics.setColor(0.6, 0.6, 0.1)
 	love.graphics.setFont(self.font)
-	love.graphics.print("x"..stats.parts, x+30, y-10)
+	love.graphics.print(""..stats.parts.."/7", x+30, y-10)
 
 end
 

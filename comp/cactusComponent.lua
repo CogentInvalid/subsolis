@@ -28,7 +28,7 @@ end
 
 function cactusComponent:death()
 	self.parent.die = true
-	self.parent.game.player.stats:addWater(8)
+	self.parent.game.player.stats:addWater(10)
 end
 
 function cactusComponent:collisionDetected(cols)

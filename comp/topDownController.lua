@@ -45,7 +45,8 @@ end
 
 function topDownController:collisionDetected(cols)
 	for i, col in ipairs(cols) do
-		if col.other.parent.id == "cactus" then
+		local id = col.other.parent.id
+		if id == "cactus" or id == "snake" then
 			if self.parent.stats.invuln <= 0 then
 				local p1 = self.parent.phys
 				local p2 = col.other.parent.phys
@@ -55,20 +56,22 @@ function topDownController:collisionDetected(cols)
 				self.phys.vx = math.cos(ang)*400
 				self.phys.vy = math.sin(ang)*400
 			end
-			self.parent.stats:loseHP(2)
+			if id == "cactus" then self.parent.stats:loseHP(2) end
+			if id == "snake" then self.parent.stats:loseHP(10) end
 		end
 
-		if col.other.parent.id == "water" then
+		if id == "water" then
 			self.parent.stats.inWater = true
 		end
 
-		if col.other.parent.id == "item" then
+		if id == "item" then
 			col.other.parent.die = true
 			local type = col.other.parent.itemType
 			if type == "bottle" then self.parent.stats:getBottle() end
 			if type == "hat" then self.parent.stats:getHat() end
 			if type == "part" then self.parent.stats:getPart() end
 		end
+
 	end
 end
 

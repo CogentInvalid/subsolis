@@ -33,10 +33,10 @@ function playerStats:update(dt)
 
 	if self.heat > 90 then
 		self.dehydrated = true
-		self:addWater(-(100/30)*dt)
+		self:addWater(-(100/24)*dt)
 	else
 		self.dehydrated = false
-		self:addWater(-(100/120)*dt)
+		self:addWater(-(100/96)*dt)
 	end
 
 	if self.heat > self.maxHeat then self.heat = self.maxHeat end
