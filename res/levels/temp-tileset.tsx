@@ -156,4 +156,84 @@
    <property name="type" value="snake"/>
   </properties>
  </tile>
+ <tile id="60">
+  <properties>
+   <property name="col" type="bool" value="false"/>
+  </properties>
+ </tile>
+ <tile id="61">
+  <properties>
+   <property name="col" type="bool" value="false"/>
+  </properties>
+ </tile>
+ <tile id="62">
+  <properties>
+   <property name="col" type="bool" value="false"/>
+  </properties>
+ </tile>
+ <tile id="63">
+  <properties>
+   <property name="col" type="bool" value="false"/>
+  </properties>
+ </tile>
+ <tile id="64">
+  <properties>
+   <property name="col" type="bool" value="false"/>
+  </properties>
+ </tile>
+ <tile id="70">
+  <properties>
+   <property name="col" type="bool" value="false"/>
+  </properties>
+ </tile>
+ <tile id="71">
+  <properties>
+   <property name="col" type="bool" value="false"/>
+  </properties>
+ </tile>
+ <tile id="72">
+  <properties>
+   <property name="col" type="bool" value="false"/>
+  </properties>
+ </tile>
+ <tile id="73">
+  <properties>
+   <property name="col" type="bool" value="false"/>
+  </properties>
+ </tile>
+ <tile id="74">
+  <properties>
+   <property name="col" type="bool" value="false"/>
+  </properties>
+ </tile>
+ <tile id="75">
+  <properties>
+   <property name="col" type="bool" value="false"/>
+  </properties>
+ </tile>
+ <tile id="76">
+  <properties>
+   <property name="col" type="bool" value="false"/>
+  </properties>
+ </tile>
+ <tile id="77">
+  <properties>
+   <property name="col" type="bool" value="false"/>
+  </properties>
+ </tile>
+ <tile id="85">
+  <properties>
+   <property name="col" type="bool" value="false"/>
+  </properties>
+ </tile>
+ <tile id="86">
+  <properties>
+   <property name="col" type="bool" value="false"/>
+  </properties>
+ </tile>
+ <tile id="87">
+  <properties>
+   <property name="col" type="bool" value="false"/>
+  </properties>
+ </tile>
 </tileset>
