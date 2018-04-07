@@ -1,8 +1,8 @@
 local mainMenu = {}
 
 function mainMenu:init()
-	self.fontTitle = love.graphics.newFont("/res/font/couriercode-bold.ttf", 80)
-	self.fontSubtitle = love.graphics.newFont("/res/font/couriercode-bold.ttf", 40)
+	self.fontTitle = love.graphics.newFont("/res/font/nanumbrushscript.ttf", 200)
+	self.fontSubtitle = love.graphics.newFont("/res/font/nanumbrushscript.ttf", 40)
 end
 
 function mainMenu:enter()
@@ -14,20 +14,29 @@ function mainMenu:update(dt)
 end
 
 function mainMenu:draw()
-	love.graphics.setColor(0.5, 0.5, 0.9)
+	love.graphics.setColor(0.8, 0.7, 1)
+	love.graphics.rectangle("fill", 0, 0, 2000, 2000)
+
+	love.graphics.setColor(245/255, 245/255, 222/255)
+	love.graphics.circle("fill", 500, 300, 180)
+
+	love.graphics.setColor(1, 1, 0.5)
+	love.graphics.rectangle("fill", 0, 500, 2000, 2000)
+
+	love.graphics.setColor(0.8, 0.8, 0.3)
 
 	local sw = love.graphics.getWidth()
 	local sh = love.graphics.getHeight()
 
 	love.graphics.setFont(self.fontTitle)
-	local str = "TITLE SCREEN"
+	local str = "subsolis"
 	local w = love.graphics.getFont():getWidth(str)
 	love.graphics.printf(str, sw/2-w/2, sh/4, 7000, 'left')
 
 	love.graphics.setFont(self.fontSubtitle)
 	str = "PRESS ENTER"
 	w = love.graphics.getFont():getWidth(str)
-	love.graphics.printf(str, sw/2-w/2, sh/2, 7000, 'left')
+	love.graphics.printf(str, sw/2-w/2, 540, 7000, 'left')
 	
 	love.graphics.setFont(courierCodeBold)
 end
