@@ -95,20 +95,20 @@ function snakeAI:chase(dt)
 		self.timer = self.timer - dt
 		if self.timer < 0 then
 			self.paused = false
-			self.timer = 0.5+math.random()*0.5
+			self.timer = 0.3+math.random()*0.5
 			self.chaseAngle = self:angleToPlayer()
 		end
 	else
 		self.parent.img.animSpeed = 2
-		self.phys.vx = math.cos(self.chaseAngle)*150
-		self.phys.vy = math.sin(self.chaseAngle)*150
+		self.phys.vx = math.cos(self.chaseAngle)*200
+		self.phys.vy = math.sin(self.chaseAngle)*200
 		self.parent.img.rotation = self.chaseAngle
 
 		self.timer = self.timer - dt
 		if self.timer < 0 then
 			self.paused = true
 			self.phys.vx = 0; self.phys.vy = 0
-			self.timer = 0.5+math.random()*0.5
+			self.timer = 0.1+math.random()*0.5
 		end
 	end
 
