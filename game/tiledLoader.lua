@@ -59,7 +59,7 @@ function tiledLoader:spawnTile(tile, layer, x, y, w, h, tileset, properties)
 	local ix, iy = imgMan.getIndex(10, tile.id)
 	local args = {
 		game = self.game, col = properties.col,
-		x = x*2*w-w, y = y*2*h-h,
+		x = x*2*w-2*w, y = y*2*h-2*h,
 		w = tonumber(tile.width)*2, h = tonumber(tile.height)*2,
 		img = tileset,
 		quad = {xPos=ix, yPos=iy, w=24, h=24, tileWidth=24, tileHeight=24},
@@ -75,7 +75,7 @@ function tiledLoader:spawnSpecialTile(tile, layer, x, y, w, h, tileset, properti
 	local quad = {xPos=ix, yPos=iy, w=24, h=24, tileWidth=24, tileHeight=24}
 	local class = require("ent/" .. tile.properties.type)
 	self.game:addEnt(class, lume.merge({
-		x=x*2*w-w, y=y*2*h-h, img=img,
+		x=x*2*w-2*w, y=y*2*h-2*h, img=img,
 		quad=quad, drawLayer=layer.properties.drawLayer
 	}, properties))
 end

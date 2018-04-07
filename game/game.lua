@@ -29,12 +29,15 @@ function game:init()
 	self.ent = {}
 	--add player
 	self.player = self:addEnt(player, {x=500, y=500})
-
 	self.ui = self:addSystem(gameUI, {player=self.player})
 	
-	--self:makeLevel()
 	self.tiledLoader:loadLevel("test")
-	self.camMan:setBounds(24, 24, 4000, 4000)
+	local lw, lh = 3072, 3072
+	self.camMan:setBounds(0, 0, lw, lh)
+	self:addEnt(wall, {x=-24, y=0, w=24, h=lh})
+	self:addEnt(wall, {x=0, y=-24, w=lw, h=24})
+	self:addEnt(wall, {x=lw, y=0, w=24, h=lh})
+	self:addEnt(wall, {x=0, y=lh, w=lw, h=24})
 	
 	--make camera follow player
 	local phys = self.player:getComponent("physics")
