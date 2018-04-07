@@ -62,14 +62,12 @@ function topDownController:collisionDetected(cols)
 			self.parent.stats.inWater = true
 		end
 
-		if col.other.parent.id == "bottle" then
+		if col.other.parent.id == "item" then
 			col.other.parent.die = true
-			self.parent.stats:getBottle()
-		end
-
-		if col.other.parent.id == "hat" then
-			col.other.parent.die = true
-			self.parent.stats:getHat()
+			local type = col.other.parent.itemType
+			if type == "bottle" then self.parent.stats:getBottle() end
+			if type == "hat" then self.parent.stats:getHat() end
+			if type == "part" then self.parent.stats:getPart() end
 		end
 	end
 end

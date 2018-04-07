@@ -10,6 +10,9 @@ function gameUI:initialize(args)
 	self.dangerIcon = getImg("icon-danger")
 	self.bottleIcon = getImg("bottle_filled")
 	self.hatIcon = getImg("hat")
+	self.partIcon = getImg("part")
+
+	self.font = love.graphics.newFont("/res/font/nanumbrushscript.ttf", 40)
 end
 
 function gameUI:draw(dt)
@@ -64,6 +67,15 @@ function gameUI:draw(dt)
 		local bottleWater = math.max((stats.water-100)/40, 0)
 		love.graphics.rectangle("fill", x+32, y, bottleWater*80, 24)
 	end
+
+	--parts
+	x = 950; y = 730
+	love.graphics.setColor(1,1,1)
+	love.graphics.draw(self.partIcon, x, y)
+	love.graphics.setColor(0.6, 0.6, 0.1)
+	love.graphics.setFont(self.font)
+	love.graphics.print("x"..stats.parts, x+30, y-10)
+
 end
 
 return gameUI

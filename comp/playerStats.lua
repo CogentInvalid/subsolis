@@ -6,13 +6,13 @@ function playerStats:initialize(args)
 	self.type = "playerStats"
 	
 	self.maxHP = 100; self.hp = self.maxHP
+	self.invuln = 0
 	self.maxWater = 100; self.water = self.maxWater
 	self.maxHeat = 100; self.heat = 0
 	self.hasBottle = false
 	self.dehydrated = false
 	self.inWater = false
-
-	self.invuln = 0
+	self.parts = 0
 end
 
 function playerStats:update(dt)
@@ -86,6 +86,10 @@ end
 
 function playerStats:death()
 	self.parent.die = true
+end
+
+function playerStats:getPart()
+	self.parts = self.parts + 1
 end
 
 return playerStats

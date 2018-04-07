@@ -49,12 +49,20 @@
  </tile>
  <tile id="40">
   <properties>
-   <property name="type" value="bottle"/>
+   <property name="itemType" value="bottle"/>
+   <property name="type" value="item"/>
   </properties>
  </tile>
  <tile id="41">
   <properties>
-   <property name="type" value="hat"/>
+   <property name="itemType" value="hat"/>
+   <property name="type" value="item"/>
+  </properties>
+ </tile>
+ <tile id="42">
+  <properties>
+   <property name="itemType" value="part"/>
+   <property name="type" value="item"/>
   </properties>
  </tile>
 </tileset>
