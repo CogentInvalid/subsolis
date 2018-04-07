@@ -37,11 +37,11 @@ function renderable:setPos(x, y)
 end
 
 function renderable:getX()
-	return self.x+self.ox
+	return self.x-self.ox*2
 end
 
 function renderable:getY()
-	return self.y+self.oy
+	return self.y-self.oy*2
 end
 
 function renderable:setOffset(x, y)

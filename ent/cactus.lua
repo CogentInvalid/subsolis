@@ -9,12 +9,13 @@ function cactus:initialize(args)
 	gameObject.initialize(self, args)
 	self.id = "cactus"
 	
-	local phys = physics:new{parent=self, x=args.x, y=args.y, w=48, h=48, col=true, solidity="static"}
+	local phys = physics:new{parent=self, x=args.x+4, y=args.y+8, w=40, h=32, col=true, solidity="static"}
 	
 	self.img = image:new{
 		parent=self, img=args.img,
 		posParent=phys, quad=args.quad,
-		drawLayer=args.drawLayer, sx=2
+		drawLayer=args.drawLayer, sx=2,
+		ox=2, oy=8
 	}
 
 	self:addComponent(self.img)
