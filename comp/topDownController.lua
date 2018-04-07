@@ -27,8 +27,11 @@ function topDownController:update(dt)
 	--movement
 	local xMove = 0; local yMove = 0
 
-	xMove = -(self.phys.vx - self.speed*movDir.x) * self.accel*dt
-	yMove = -(self.phys.vy - self.speed*movDir.y) * self.accel*dt
+	local speed = self.speed
+	if self.parent.stats.inWater then speed = speed/2 end
+
+	xMove = -(self.phys.vx - speed*movDir.x) * self.accel*dt
+	yMove = -(self.phys.vy - speed*movDir.y) * self.accel*dt
 
 	self.phys:addVel(xMove, yMove)
 
@@ -53,6 +56,10 @@ function topDownController:collisionDetected(cols)
 				self.phys.vy = math.sin(ang)*400
 			end
 			self.parent.stats:loseHP(2)
+		end
+
+		if col.other.parent.id == "water" then
+			self.parent.stats.inWater = true
 		end
 	end
 end

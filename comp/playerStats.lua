@@ -9,6 +9,7 @@ function playerStats:initialize(args)
 	self.maxWater = 100; self.water = self.maxWater
 	self.maxHeat = 100; self.heat = 0
 	self.dehydrated = false
+	self.inWater = false
 
 	self.invuln = 0
 end
@@ -43,12 +44,24 @@ function playerStats:update(dt)
 		--TODO: die
 	end
 
+	if self.inWater then
+		self:addWater(10*dt)
+		self:addHeat(-10*dt)
+	end
+	self.inWater = false
+
 end
 
 function playerStats:addWater(amt)
 	self.water = self.water + amt
 	if self.water > 100 then self.water = 100 end
 	if self.water < 0 then self.water = 0 end
+end
+
+function playerStats:addHeat(amt)
+	self.heat = self.heat + amt
+	if self.heat > 100 then self.heat = 100 end
+	if self.heat < 0 then self.heat = 0 end
 end
 
 function playerStats:loseHP(amt)

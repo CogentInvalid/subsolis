@@ -12,6 +12,11 @@
    <property name="type" value="shade"/>
   </properties>
  </tile>
+ <tile id="3">
+  <properties>
+   <property name="type" value="water"/>
+  </properties>
+ </tile>
  <tile id="10">
   <properties>
    <property name="col" type="bool" value="false"/>
