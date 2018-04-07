@@ -21,7 +21,7 @@ function playerStats:update(dt)
 	end
 
 	if self.parent.shadeable.inShade then
-		self.heat = self.heat - (100/30)*dt
+		self.heat = self.heat - (100/25)*dt
 	else
 		self.heat = self.heat + (100/30)*dt
 	end
@@ -43,6 +43,12 @@ function playerStats:update(dt)
 		--TODO: die
 	end
 
+end
+
+function playerStats:addWater(amt)
+	self.water = self.water + amt
+	if self.water > 100 then self.water = 100 end
+	if self.water < 0 then self.water = 0 end
 end
 
 function playerStats:loseHP(amt)
