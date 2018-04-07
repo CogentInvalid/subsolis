@@ -9,6 +9,7 @@
  <tile id="2">
   <properties>
    <property name="col" type="bool" value="false"/>
+   <property name="drawLayer" value="background"/>
    <property name="type" value="shade"/>
   </properties>
  </tile>
@@ -17,12 +18,52 @@
    <property name="type" value="water"/>
   </properties>
  </tile>
+ <tile id="4">
+  <properties>
+   <property name="col" type="bool" value="false"/>
+  </properties>
+ </tile>
+ <tile id="5">
+  <properties>
+   <property name="col" type="bool" value="false"/>
+  </properties>
+ </tile>
+ <tile id="6">
+  <properties>
+   <property name="col" type="bool" value="false"/>
+  </properties>
+ </tile>
+ <tile id="7">
+  <properties>
+   <property name="col" type="bool" value="false"/>
+  </properties>
+ </tile>
  <tile id="10">
   <properties>
    <property name="col" type="bool" value="false"/>
   </properties>
  </tile>
  <tile id="11">
+  <properties>
+   <property name="col" type="bool" value="false"/>
+  </properties>
+ </tile>
+ <tile id="14">
+  <properties>
+   <property name="col" type="bool" value="false"/>
+  </properties>
+ </tile>
+ <tile id="15">
+  <properties>
+   <property name="col" type="bool" value="false"/>
+  </properties>
+ </tile>
+ <tile id="16">
+  <properties>
+   <property name="col" type="bool" value="false"/>
+  </properties>
+ </tile>
+ <tile id="17">
   <properties>
    <property name="col" type="bool" value="false"/>
   </properties>
@@ -81,6 +122,20 @@
   <properties>
    <property name="itemType" value="part"/>
    <property name="type" value="item"/>
+  </properties>
+ </tile>
+ <tile id="50">
+  <properties>
+   <property name="col" type="bool" value="false"/>
+   <property name="drawLayer" value="background"/>
+   <property name="type" value="shade"/>
+  </properties>
+ </tile>
+ <tile id="51">
+  <properties>
+   <property name="col" type="bool" value="false"/>
+   <property name="drawLayer" value="background"/>
+   <property name="type" value="shade"/>
   </properties>
  </tile>
 </tileset>
