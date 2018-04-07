@@ -52,6 +52,8 @@ function gameUI:draw(dt)
 		love.graphics.setColor(1,1,1)
 		love.graphics.draw(self.dangerIcon, x+232, y)
 	end
+
+	--bottle
 	if stats.hasBottle then
 		x = 10; y = 730
 		love.graphics.setColor(1,1,1)

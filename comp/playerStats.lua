@@ -48,6 +48,10 @@ function playerStats:update(dt)
 	end
 	self.inWater = false
 
+	if self.water <= 0 then
+		self:loseHP(10*dt, true)
+	end
+
 end
 
 function playerStats:getBottle()
@@ -63,10 +67,7 @@ function playerStats:addWater(amt)
 	self.water = self.water + amt
 
 	if self.water > self.maxWater then self.water = self.maxWater end
-	if self.water < 0 then
-		self.water = 0
-		self:death()
-	end
+	if self.water < 0 then self.water = 0 end
 end
 
 function playerStats:addHeat(amt)
@@ -75,8 +76,8 @@ function playerStats:addHeat(amt)
 	if self.heat < 0 then self.heat = 0 end
 end
 
-function playerStats:loseHP(amt)
-	if self.invuln <= 0 then
+function playerStats:loseHP(amt, ignoreInvuln)
+	if ignoreInvuln or self.invuln <= 0 then
 		self.invuln = 0.25
 		self.hp = self.hp - amt
 		if self.hp <= 0 then self.hp = 0; self:death() end
