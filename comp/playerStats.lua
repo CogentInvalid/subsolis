@@ -9,9 +9,16 @@ function playerStats:initialize(args)
 	self.maxWater = 100; self.water = self.maxWater
 	self.maxHeat = 100; self.heat = 0
 	self.dehydrated = false
+
+	self.invuln = 0
 end
 
 function playerStats:update(dt)
+
+	if self.invuln > 0 then
+		self.invuln = self.invuln - dt
+		if self.invuln < 0 then self.invuln = 0 end
+	end
 
 	if self.parent.shadeable.inShade then
 		self.heat = self.heat - (100/30)*dt
@@ -36,6 +43,18 @@ function playerStats:update(dt)
 		--TODO: die
 	end
 
+end
+
+function playerStats:loseHP(amt)
+	if self.invuln <= 0 then
+		self.invuln = 0.25
+		self.hp = self.hp - amt
+		if self.hp <= 0 then self.hp = 0; self:death() end
+	end
+end
+
+function playerStats:death()
+	self.parent.die = true
 end
 
 return playerStats

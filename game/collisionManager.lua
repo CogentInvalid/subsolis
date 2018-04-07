@@ -60,13 +60,13 @@ function collisionManager:collide(e1)
 		
 		-- for each detected collision:
 		for i, col in ipairs(all) do
+			-- call sideHit
+			entity:notifyComponents("sideHit", col)
 			--ignore all corner collisions as long as there's at least one side collision
 			if col.counter == 1 or sideHit == false then
 				-- resolve collisions (hitSide)
 				e1:hitSide(col.other, col.side)
 			end
-			-- call sideHit
-			entity:notifyComponents("sideHit", col)
 		end
 		
 	end

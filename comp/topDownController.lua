@@ -40,4 +40,21 @@ function topDownController:update(dt)
 	
 end
 
+function topDownController:collisionDetected(cols)
+	for i, col in ipairs(cols) do
+		if col.other.parent.id == "cactus" then
+			if self.parent.stats.invuln <= 0 then
+				local p1 = self.parent.phys
+				local p2 = col.other.parent.phys
+				local dx = (p1.x+p1.w/2)-(p2.x+p2.w/2)
+				local dy = (p1.y+p1.h/2)-(p2.y+p2.h/2)
+				local ang = math.atan2(dy, dx)
+				self.phys.vx = math.cos(ang)*400
+				self.phys.vy = math.sin(ang)*400
+			end
+			self.parent.stats:loseHP(2)
+		end
+	end
+end
+
 return topDownController
