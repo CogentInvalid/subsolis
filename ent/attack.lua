@@ -11,12 +11,13 @@ function attack:initialize(args)
 	gameObject.initialize(self, args)
 	self.id = "attack"
 
-	local phys = physics:new{parent=self, x=args.x, y=args.y, w=16, h=16, col=false}
+	local phys = physics:new{parent=self, x=args.x-16, y=args.y-16, w=32, h=32, col=false}
 	
 	self.img = image:new{
 		parent=self, img="slash",
 		posParent=phys, quad=args.quad,
 		drawLayer=args.drawLayer, sx=2,
+		offx=16, offy=16,
 		ox=8, oy=8,
 		rotation=args.rotation
 	}

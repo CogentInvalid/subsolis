@@ -128,7 +128,7 @@ function game:draw()
 	
 	self.showHitboxes = false
 	if self.showHitboxes then
-		love.graphics.setColor(255,0,0,200)
+		love.graphics.setColor(1,0,0,0.7)
 		local cols, len = self.colMan.world:queryRect(-1000, -1000, 2000, 2000)
 		for i, phys in ipairs(cols) do
 			love.graphics.rectangle("fill", phys.x, phys.y, phys.w, phys.h)

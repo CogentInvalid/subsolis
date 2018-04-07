@@ -21,7 +21,7 @@ function player:initialize(args)
 		w=32, h=32,
 		color={r=0.2, g=0.7, b=0.2}
 	}
-	self.controller = topDownController:new{parent=self, speed=320}
+	self.controller = topDownController:new{parent=self, speed=300}
 	self.stats = playerStats:new{parent=self}
 	self.shadeable = shadeable:new{parent=self}
 	self.attack = playerAttack:new{parent=self}

@@ -21,7 +21,6 @@ end
 function cactusComponent:takeDamage()
 	self.hp = self.hp - 1
 	self.invuln = 0.2
-
 	if self.hp <= 0 then
 		self:death()
 	end
@@ -29,7 +28,6 @@ end
 
 function cactusComponent:death()
 	self.parent.die = true
-
 	self.parent.game.player.stats:addWater(8)
 end
 

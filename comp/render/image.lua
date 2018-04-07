@@ -15,6 +15,9 @@ function image:initialize(args)
 
 	self.sx = args.sx or 1
 
+	self.offx = args.offx or 0
+	self.offy = args.offy or 0
+
 	self.rotation = args.rotation or 0
 	
 	--what we need to set quad:
@@ -50,7 +53,7 @@ function image:draw()
 		if self.quad ~= nil then
 			love.graphics.draw(self.img, self.quad, math.floor(self.x), math.floor(self.y), self.rotation, self.sx, sy, self.ox, self.oy)
 		else
-			love.graphics.draw(self.img, self.x, self.y, self.rotation, self.sx, sy, self.ox, self.oy)
+			love.graphics.draw(self.img, self.x+self.offx, self.y+self.offy, self.rotation, self.sx, sy, self.ox, self.oy)
 		end
 	end
 end
