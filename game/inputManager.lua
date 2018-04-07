@@ -4,12 +4,10 @@ function inputManager:initialize(parent)
 	self.game = parent
 	
 	self.bind = {
-		z = "jump",
-		space = "jump",
-		left = "left",
-		right = "right",
-		up = "up",
-		down = "down",
+		a = "left",
+		d = "right",
+		w = "up",
+		s = "down",
 		m = "mute",
 		q = "debug"
 	}
@@ -28,12 +26,6 @@ end
 function inputManager:keypressed(key)
 	if self.map[self.bind[key]] ~= nil then
 		self.map[self.bind[key]](self)
-	end
-end
-
-function inputManager:jump()
-	if self.game.player then
-		self.game.player.controller:jump()
 	end
 end
 
