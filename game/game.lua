@@ -11,6 +11,8 @@ local game = {}
 
 function game:init()
 
+	love.graphics.setBackgroundColor(252/255,231/255,133/255)
+
 	--timestep related stuff
 	dt = 0.01
 	accum = 0
@@ -28,11 +30,11 @@ function game:init()
 	--entities
 	self.ent = {}
 	--add player
-	self.player = self:addEnt(player, {x=500, y=500})
+	self.player = self:addEnt(player, {x=500+768, y=500+768})
 	self.ui = self:addSystem(gameUI, {player=self.player})
 	
 	self.tiledLoader:loadLevel("test")
-	local lw, lh = 3072, 3072
+	local lw, lh = 4608, 4608
 	self.camMan:setBounds(0, 0, lw, lh)
 	self:addEnt(wall, {x=-24, y=0, w=24, h=lh})
 	self:addEnt(wall, {x=0, y=-24, w=lw, h=24})
@@ -76,6 +78,8 @@ function game:reset()
 end
 
 function game:update(delta)
+
+	debug(love.timer.getAverageDelta())
 
 	--timestep stuff
 	if self.paused == false then accum = accum + delta end
