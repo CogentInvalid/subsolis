@@ -5,8 +5,8 @@ function topDownController:initialize(args)
 	component.initialize(self, args)
 	self.type = "topDownController"
 	
-	self.speed = args.speed or 300
-	self.accel = args.accel or 5
+	self.speed = args.speed or 200
+	self.accel = args.accel or 6
 	self.friction = args.friction or 3
 	
 	self.phys = self.parent:getComponent("physics")

@@ -12,7 +12,7 @@ audio = require "audio"
 --gamestates
 gameMode = {}
 gameMode.mainMenu = require "menu/mainMenu"
-gameMode.game = require "game/gameExample"
+gameMode.game = require "game/game"
 
 --other things
 debugger = require "debugger"

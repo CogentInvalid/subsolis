@@ -10,7 +10,7 @@ function tiledLoader:initialize(parent)
 end
 
 function tiledLoader:loadLevel(name)
-	local map = sti.new(tiledLoader.path.prefix .. name .. tiledLoader.path.suffix)
+	local map = sti(tiledLoader.path.prefix .. name .. tiledLoader.path.suffix)
 	
 	local tileset = map.tilesets[1]
 	local currentTileset = tileset
@@ -34,9 +34,9 @@ function tiledLoader:loadLevel(name)
 				if data[y][x] ~= nil then
 					local properties = map:getTileProperties(layer.name, x, y)
 					if properties.type == nil then
-						self:spawnTile(data[y][x], x, y, tilewidth, tileheight, currentTileset.name, properties)
+						self:spawnTile(data[y][x], layer, x, y, tilewidth, tileheight, currentTileset.name, properties)
 					else
-						self:spawnSpecialTile(data[y][x], x, y, tilewidth, tileheight, properties)
+						self:spawnSpecialTile(data[y][x], layer, x, y, tilewidth, tileheight, currentTileset.name, properties)
 					end
 				end
 			end
@@ -55,22 +55,29 @@ function tiledLoader:loadLevel(name)
 	
 end
 
-function tiledLoader:spawnTile(tile, x, y, w, h, tileset, properties)
+function tiledLoader:spawnTile(tile, layer, x, y, w, h, tileset, properties)
 	local ix, iy = imgMan.getIndex(10, tile.id)
 	local args = {
-		game = self.game, col = col,
-		x = x*w-w, y = y*h-h,
-		w = tonumber(tile.width), h = tonumber(tile.height),
+		game = self.game, col = properties.col,
+		x = x*2*w-w, y = y*2*h-h,
+		w = tonumber(tile.width)*2, h = tonumber(tile.height)*2,
 		img = tileset,
-		quad = {xPos=ix, yPos=iy, w=32, h=32, tileWidth=32, tileHeight=32}
+		quad = {xPos=ix, yPos=iy, w=24, h=24, tileWidth=24, tileHeight=24},
+		drawLayer = layer.properties.drawLayer, scale=2
 	}
 	local wall = require("ent/wall")
 	self.game:addEnt(wall, args)
 end
 
-function tiledLoader:spawnSpecialTile(tile, x, y, w, h, properties)
+function tiledLoader:spawnSpecialTile(tile, layer, x, y, w, h, tileset, properties)
+	local ix, iy = imgMan.getIndex(10, tile.id)
+	local img = tileset
+	local quad = {xPos=ix, yPos=iy, w=24, h=24, tileWidth=24, tileHeight=24}
 	local class = require("ent/" .. tile.properties.type)
-	self.game:addEnt(class, lume.merge({x=x*w-w, y=y*h-h}, properties))
+	self.game:addEnt(class, lume.merge({
+		x=x*2*w-w, y=y*2*h-h, img=img,
+		quad=quad, drawLayer=layer.properties.drawLayer
+	}, properties))
 end
 
 function tiledLoader:spawnObject(object)

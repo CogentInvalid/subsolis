@@ -15,10 +15,10 @@ function wall:initialize(args)
 	local phys = physics:new({parent=self, x=args.x, y=args.y, w=args.w or 50, h=args.h or 50, col=false, solidity=solidity})
 	
 	if args.img ~= nil then
-		self.img = image:new({parent=self, img=args.img, posParent=phys, quad=args.quad})
+		self.img = image:new({parent=self, img=args.img, posParent=phys, quad=args.quad, drawLayer=args.drawLayer, sx=args.scale})
 		self:addComponent(self.img)
 	else
-		self.rect = rectangle:new({parent=self, x=args.x, y=args.y, w=args.w, h=args.h})
+		self.rect = rectangle:new({parent=self, x=args.x, y=args.y, w=args.w, h=args.h, drawLayer=args.drawLayer})
 		if solidity == nil then rect.color.a = 100 end
 		self:addComponent(self.rect)
 	end

@@ -27,9 +27,10 @@ function game:init()
 	--entities
 	self.ent = {}
 	--add player
-	self.player = self:addEnt(player, {x=500, y=0})
+	self.player = self:addEnt(player, {x=500, y=500})
 	
-	self:makeLevel()
+	--self:makeLevel()
+	self.tiledLoader:loadLevel("test")
 	
 	--make camera follow player
 	local phys = self.player:getComponent("physics")
@@ -68,6 +69,7 @@ function game:reset()
 end
 
 function game:update(delta)
+
 	--timestep stuff
 	if self.paused == false then accum = accum + delta end
 	if accum > 0.05 then accum = 0.05 end

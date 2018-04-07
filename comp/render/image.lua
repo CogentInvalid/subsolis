@@ -13,7 +13,7 @@ function image:initialize(args)
 	
 	self.w, self.h = self.img:getDimensions()
 
-	self.sx = 1
+	self.sx = args.sx or 1
 	
 	--what we need to set quad:
 	--xPos, yPos
@@ -40,7 +40,7 @@ end
 --draw the image
 function image:draw()
 	renderable.draw(self)
-	local sx = 1; local sy = 1
+	local sx = self.sx; local sy = self.sx
 
 	if self.animation then
 		self.animation:draw(self.img, self.x+self.ox*self.sx, self.y+self.oy, 0, self.sx, sy)
