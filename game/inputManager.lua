@@ -16,7 +16,11 @@ function inputManager:initialize(parent)
 	self.map = {
 		attack = self.attack,
 		mute = self.mute,
-		debug = self.debug
+		debug = self.debug,
+		left = lume.fn(self.move, self, "left"),
+		right = lume.fn(self.move, self, "right"),
+		up = lume.fn(self.move, self, "up"),
+		down = lume.fn(self.move, self, "down"),
 	}
 	
 end
@@ -39,6 +43,10 @@ end
 function inputManager:attack(x, y)
 	x, y = self.game.camMan:worldPos(x, y)
 	self.game.player.attack:attack(x, y)
+end
+
+function inputManager:move(dir)
+	self.game.player.controller.lastMove = dir
 end
 
 function inputManager:debug()

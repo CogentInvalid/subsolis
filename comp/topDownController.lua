@@ -8,6 +8,9 @@ function topDownController:initialize(args)
 	self.speed = args.speed or 200
 	self.accel = args.accel or 6
 	self.friction = args.friction or 3
+
+	self.walking = false
+	self.lastMove = nil
 	
 	self.phys = self.parent:getComponent("physics")
 end
@@ -23,6 +26,17 @@ function topDownController:update(dt)
 	if input:keyDown("right") then movDir.x = movDir.x + 1 end
 	if input:keyDown("up") then movDir.y = movDir.y - 1 end
 	if input:keyDown("down") then movDir.y = movDir.y + 1 end
+
+	if movDir.x == 0 and movDir.y == 0 then
+		self.walking = false
+	else
+		if self.lastMove == nil then
+			if input:keyDown("left") then self.lastMove = "left" end
+			if input:keyDown("right") then self.lastMove = "right" end
+			if input:keyDown("up") then self.lastMove = "up" end
+			if input:keyDown("down") then self.lastMove = "down" end
+		end
+	end
 
 	--movement
 	local xMove = 0; local yMove = 0
