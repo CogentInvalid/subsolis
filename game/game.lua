@@ -32,7 +32,6 @@ function game:init()
 	self.ent = {}
 	--add player
 	self.player = self:addEnt(player, {x=1460, y=1460})
-	--self:addEnt(snake, {x=1500, y=1600, target=self.player})
 	self.ui = self:addSystem(gameUI, {player=self.player})
 	
 	self.tiledLoader:loadLevel("test")
