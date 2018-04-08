@@ -79,7 +79,7 @@ end
 function snakeAI:playerInRange()
 	local dx, dy = self:getDiff(self.target.phys)
 	local dist = math.sqrt(dx*dx + dy*dy)
-	if dist < 175 then return true end
+	if dist < 195 then return true end
 end
 
 function snakeAI:startChase()
