@@ -60,61 +60,71 @@ return {
         {
           id = 4,
           properties = {
-            ["col"] = false
+            ["col"] = false,
+            ["drawLayer"] = "foreground"
           }
         },
         {
           id = 5,
           properties = {
-            ["col"] = false
+            ["col"] = false,
+            ["drawLayer"] = "foreground"
           }
         },
         {
           id = 6,
           properties = {
-            ["col"] = false
+            ["col"] = false,
+            ["drawLayer"] = "foreground"
           }
         },
         {
           id = 7,
           properties = {
-            ["col"] = false
+            ["col"] = false,
+            ["drawLayer"] = "foreground"
           }
         },
         {
           id = 10,
           properties = {
-            ["col"] = false
+            ["col"] = false,
+            ["drawLayer"] = "foreground"
           }
         },
         {
           id = 11,
           properties = {
-            ["col"] = false
+            ["col"] = false,
+            ["drawLayer"] = "foreground"
           }
         },
         {
           id = 14,
           properties = {
-            ["col"] = false
+            ["col"] = false,
+            ["drawLayer"] = "foreground"
           }
         },
         {
           id = 15,
           properties = {
-            ["col"] = false
+            ["col"] = false,
+            ["drawLayer"] = "foreground"
           }
         },
         {
           id = 16,
           properties = {
-            ["col"] = false
+            ["col"] = false,
+            ["drawLayer"] = "foreground"
           }
         },
         {
           id = 17,
           properties = {
-            ["col"] = false
+            ["col"] = false,
+            ["drawLayer"] = "foreground"
           }
         },
         {
@@ -122,6 +132,12 @@ return {
           properties = {
             ["cactus"] = "1",
             ["type"] = "cactus"
+          }
+        },
+        {
+          id = 28,
+          properties = {
+            ["drawLayer"] = "foreground"
           }
         },
         {
@@ -231,31 +247,36 @@ return {
         {
           id = 60,
           properties = {
-            ["col"] = false
+            ["col"] = false,
+            ["drawLayer"] = "foreground"
           }
         },
         {
           id = 61,
           properties = {
-            ["col"] = false
+            ["col"] = false,
+            ["drawLayer"] = "foreground"
           }
         },
         {
           id = 62,
           properties = {
-            ["col"] = false
+            ["col"] = false,
+            ["drawLayer"] = "foreground"
           }
         },
         {
           id = 63,
           properties = {
-            ["col"] = false
+            ["col"] = false,
+            ["drawLayer"] = "foreground"
           }
         },
         {
           id = 64,
           properties = {
-            ["col"] = false
+            ["col"] = false,
+            ["drawLayer"] = "foreground"
           }
         },
         {
@@ -275,49 +296,57 @@ return {
         {
           id = 70,
           properties = {
-            ["col"] = false
+            ["col"] = false,
+            ["drawLayer"] = "foreground"
           }
         },
         {
           id = 71,
           properties = {
-            ["col"] = false
+            ["col"] = false,
+            ["drawLayer"] = "foreground"
           }
         },
         {
           id = 72,
           properties = {
-            ["col"] = false
+            ["col"] = false,
+            ["drawLayer"] = "foreground"
           }
         },
         {
           id = 73,
           properties = {
-            ["col"] = false
+            ["col"] = false,
+            ["drawLayer"] = "foreground"
           }
         },
         {
           id = 74,
           properties = {
-            ["col"] = false
+            ["col"] = false,
+            ["drawLayer"] = "foreground"
           }
         },
         {
           id = 75,
           properties = {
-            ["col"] = false
+            ["col"] = false,
+            ["drawLayer"] = "foreground"
           }
         },
         {
           id = 76,
           properties = {
-            ["col"] = false
+            ["col"] = false,
+            ["drawLayer"] = "foreground"
           }
         },
         {
           id = 77,
           properties = {
-            ["col"] = false
+            ["col"] = false,
+            ["drawLayer"] = "foreground"
           }
         },
         {
@@ -337,19 +366,22 @@ return {
         {
           id = 85,
           properties = {
-            ["col"] = false
+            ["col"] = false,
+            ["drawLayer"] = "foreground"
           }
         },
         {
           id = 86,
           properties = {
-            ["col"] = false
+            ["col"] = false,
+            ["drawLayer"] = "foreground"
           }
         },
         {
           id = 87,
           properties = {
-            ["col"] = false
+            ["col"] = false,
+            ["drawLayer"] = "foreground"
           }
         },
         {

@@ -15,18 +15,18 @@ function cactus:initialize(args)
 		self.img = image:new{
 			parent=self, img=args.img,
 			posParent=self.phys, quad=args.quad,
-			drawLayer=args.drawLayer, sx=2,
+			drawLayer="default", sx=2,
 			ox=2, oy=8
 		}
 	end
 
 	if args.cactus == "2" then
-		self.phys = physics:new{parent=self, x=args.x+4, y=args.y+8, w=40, h=32, col=true, solidity="none"}
+		self.phys = physics:new{parent=self, x=args.x+4, y=args.y+8, w=40, h=48, col=true, solidity="none"}
 		self.img = image:new{
 			parent=self, img="cactus2",
 			posParent=self.phys,
-			drawLayer=args.drawLayer, sx=2,
-			ox=2, oy=32
+			drawLayer="default", sx=2,
+			ox=2, oy=20
 		}
 	end
 
