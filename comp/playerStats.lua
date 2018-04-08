@@ -84,6 +84,11 @@ function playerStats:loseHP(amt, ignoreInvuln)
 	end
 end
 
+function playerStats:gainHP(amt)
+	self.hp = self.hp + amt
+	if self.hp > self.maxHP then self.hp = self.maxHP end
+end
+
 function playerStats:death()
 	self.parent.die = true
 end

@@ -28,7 +28,7 @@ function topDownController:update(dt)
 	local xMove = 0; local yMove = 0
 
 	local speed = self.speed
-	if self.parent.stats.inWater then speed = speed/2 end
+	if self.parent.stats.inWater then speed = speed*0.4 end
 
 	xMove = -(self.phys.vx - speed*movDir.x) * self.accel*dt
 	yMove = -(self.phys.vy - speed*movDir.y) * self.accel*dt
@@ -70,6 +70,7 @@ function topDownController:collisionDetected(cols)
 			if type == "bottle" then self.parent.stats:getBottle() end
 			if type == "hat" then self.parent.stats:getHat() end
 			if type == "part" then self.parent.stats:getPart() end
+			if type == "fruit" then self.parent.stats:gainHP(8) end
 		end
 
 	end

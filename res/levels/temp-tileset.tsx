@@ -137,6 +137,12 @@
    <property name="type" value="item"/>
   </properties>
  </tile>
+ <tile id="47">
+  <properties>
+   <property name="itemType" value="fruit"/>
+   <property name="type" value="item"/>
+  </properties>
+ </tile>
  <tile id="50">
   <properties>
    <property name="col" type="bool" value="false"/>
