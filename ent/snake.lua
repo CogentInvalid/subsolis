@@ -21,7 +21,7 @@ function snake:initialize(args)
 
 	self.img = image:new{
 		parent=self, posParent=self.phys,
-		img=properties.enemyImg,
+		img=args.enemyImg,
 		drawLayer = args.drawLayer, sx=2,
 		animation = anim,
 		ox = 12, oy = 12,

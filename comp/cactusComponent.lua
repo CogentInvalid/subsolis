@@ -29,7 +29,7 @@ end
 function cactusComponent:death()
 	self.parent.die = true
 	self.parent.game.player.stats:addWater(10)
-	if love.math.random() < 0.15 then
+	if love.math.random() < 0.18 then
 		local x = self.parent.phys.x; local y = self.parent.phys.y
 		self.parent.game:addEnt(require("ent/item"), {img="fruit", x=x-4, y=y-4, itemType="fruit"})
 	end

@@ -21,10 +21,10 @@ function player:initialize(args)
 
 	local g = anim8.newGrid(24, 48, 24*4, 48*3)
 
-	self.anim_down = anim8.newAnimation(g('1-4',1), 0.15)
-	self.anim_left = anim8.newAnimation(g('1-4',2), 0.15)
-	self.anim_right = anim8.newAnimation(g('1-4',2), 0.15)
-	self.anim_up = anim8.newAnimation(g('1-4',3), 0.15)
+	self.anim_down = anim8.newAnimation(g('1-4',1), 0.1)
+	self.anim_left = anim8.newAnimation(g('1-4',2), 0.1)
+	self.anim_right = anim8.newAnimation(g('1-4',2), 0.1)
+	self.anim_up = anim8.newAnimation(g('1-4',3), 0.1)
 	self.currentAnim = self.anim_right
 
 	self.img = image:new{

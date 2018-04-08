@@ -175,20 +175,20 @@
  </tile>
  <tile id="52">
   <properties>
-   <property name="type" value="snake"/>
    <property name="enemyImg" value="snake"/>
+   <property name="type" value="snake"/>
   </properties>
  </tile>
  <tile id="53">
   <properties>
-   <property name="type" value="snake"/>
    <property name="enemyImg" value="scorpion"/>
-   </properties>
+   <property name="type" value="snake"/>
+  </properties>
  </tile>
  <tile id="54">
   <properties>
-   <property name="type" value="snake"/>
    <property name="enemyImg" value="wolf"/>
+   <property name="type" value="snake"/>
   </properties>
  </tile>
  <tile id="60">
