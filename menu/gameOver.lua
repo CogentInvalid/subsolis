@@ -36,7 +36,9 @@ function gameOver:draw()
 end
 
 function gameOver:keypressed(key)
-	gamestate.switch(gameMode.mainMenu)
+	if key == "return" then
+		gamestate.switch(gameMode.mainMenu)
+	end
 end
 
 function gameOver:mousepressed()

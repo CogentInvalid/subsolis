@@ -61,7 +61,9 @@ function winScreen:draw()
 end
 
 function winScreen:keypressed(key)
-	gamestate.switch(gameMode.mainMenu)
+	if key == "return" then
+		gamestate.switch(gameMode.mainMenu)
+	end
 end
 
 function winScreen:mousepressed()
