@@ -21,12 +21,12 @@ function cactus:initialize(args)
 	end
 
 	if args.cactus == "2" then
-		self.phys = physics:new{parent=self, x=args.x+4, y=args.y+8, w=40, h=32, col=true, solidity="none"}
+		self.phys = physics:new{parent=self, x=args.x+4, y=args.y+8, w=40, h=48, col=true, solidity="none"}
 		self.img = image:new{
 			parent=self, img="cactus2",
 			posParent=self.phys,
 			drawLayer="default", sx=2,
-			ox=2, oy=32
+			ox=2, oy=20
 		}
 	end
 
