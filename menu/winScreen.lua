@@ -17,6 +17,7 @@ function winScreen:init()
 end
 
 function winScreen:enter()
+	audio:clearAudio()
 end
 
 function winScreen:update(dt)

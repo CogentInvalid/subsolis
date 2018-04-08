@@ -35,12 +35,8 @@ function gameOver:draw()
 	love.graphics.printf(str, sw/2-w/2, 540, 7000, 'left')
 end
 
-function gameOver:startGame()
-	gamestate.switch(gameMode.mainMenu)
-end
-
 function gameOver:keypressed(key)
-	self:startGame()
+	gamestate.switch(gameMode.mainMenu)
 end
 
 function gameOver:mousepressed()
