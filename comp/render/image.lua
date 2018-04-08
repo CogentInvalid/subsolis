@@ -20,10 +20,6 @@ function image:initialize(args)
 
 	self.rotation = args.rotation or 0
 	
-	--what we need to set quad:
-	--xPos, yPos
-	--width, height
-	--tileWidth, tileHeight
 	if args.quad ~= nil then
 		local quad = args.quad
 		self:setQuad(quad.xPos, quad.yPos, quad.w, quad.h, quad.tileWidth, quad.tileHeight)
@@ -60,19 +56,19 @@ function image:draw()
 end
 
 function image:getX()
-	return self.x-self.ox+self.offx-10
+	return self.x-self.ox+self.offx-20
 end
 
 function image:getY()
-	return self.y-self.oy+self.offy-10
+	return self.y-self.oy+self.offy-20
 end
 
 function image:getW()
-	return self.w*2+20
+	return self.w*2+40
 end
 
 function image:getH()
-	return self.h*2+20
+	return self.h*2+40
 end
 
 return image

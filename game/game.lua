@@ -12,7 +12,7 @@ local game = {}
 
 function game:init()
 
-	love.graphics.setBackgroundColor(252/255,231/255,133/255)
+	love.graphics.setBackgroundColor(252/255, 231/255, 133/255)
 
 	--timestep related stuff
 	dt = 0.01
