@@ -34,11 +34,23 @@ function snakeAI:startWander()
 	self.wanderTimer = 1+love.math.random()*2
 end
 
+function snakeAI:setRotation(ang, x)
+	if self.parent.type ~= "wolf" then
+		self.parent.img.rotation = ang
+	else
+		if x < 0 then
+			self.parent.img.sx = -2
+		else
+			self.parent.img.sx = 2
+		end
+	end
+end
+
 function snakeAI:wander(dt)
 	self.parent.img.animSpeed = 1
-	self.parent.img.rotation = self.wanderDir
 	self.phys.vx = math.cos(self.wanderDir)*30
 	self.phys.vy = math.sin(self.wanderDir)*30
+	self:setRotation(self.wanderDir, self.phys.vx)
 	self.wanderTimer = self.wanderTimer - dt
 	if self.wanderTimer < 0 then
 		self:startIdle()
@@ -102,7 +114,7 @@ function snakeAI:chase(dt)
 		self.parent.img.animSpeed = 2
 		self.phys.vx = math.cos(self.chaseAngle)*200
 		self.phys.vy = math.sin(self.chaseAngle)*200
-		self.parent.img.rotation = self.chaseAngle
+		self:setRotation(self.chaseAngle, self.phys.vx)
 
 		self.timer = self.timer - dt
 		if self.timer < 0 then

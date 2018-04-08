@@ -19,10 +19,12 @@ function snake:initialize(args)
 	local g = anim8.newGrid(24, 24, 96, 24)
 	local anim = anim8.newAnimation(g('1-4',1), 0.15)
 
+	self.type = args.enemyImg
+
 	self.img = image:new{
 		parent=self, posParent=self.phys,
 		img=args.enemyImg,
-		drawLayer = args.drawLayer, sx=2,
+		drawLayer = args.drawLayer, sx=2, sy=2,
 		animation = anim,
 		ox = 12, oy = 12,
 		offx = 14, offy = 14,
