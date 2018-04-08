@@ -14,6 +14,7 @@ gameMode = {}
 gameMode.mainMenu = require "menu/mainMenu"
 gameMode.game = require "game/game"
 gameMode.lose = require "menu/gameOver"
+gameMode.win = require "menu/winScreen"
 
 --other things
 debugger = require "debugger"
@@ -47,7 +48,7 @@ function love.load()
 		'keypressed', 'keyreleased',
 		'mousepressed', 'mousereleased',
 	}
-	gamestate.switch(gameMode.lose)
+	gamestate.switch(gameMode.mainMenu)
 end
 
 function love.update(dt)

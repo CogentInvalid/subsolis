@@ -96,6 +96,9 @@ end
 
 function playerStats:getPart()
 	self.parts = self.parts + 1
+	if self.parts >= 7 then
+		gamestate.switch(gameMode.win)
+	end
 end
 
 return playerStats

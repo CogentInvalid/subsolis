@@ -16,9 +16,6 @@ function gameOver:draw()
 	love.graphics.setColor(0.05, 0.05, 0.08)
 	love.graphics.rectangle("fill", 0, 0, 2000, 2000)
 
-	--love.graphics.setColor(245/255, 245/255, 222/255)
-	--love.graphics.circle("fill", 512, 300, 180)
-
 	love.graphics.setColor(0.2, 0.2, 0.1)
 	love.graphics.rectangle("fill", 0, 500, 2000, 2000)
 
@@ -36,8 +33,6 @@ function gameOver:draw()
 	str = "PRESS ENTER"
 	w = love.graphics.getFont():getWidth(str)
 	love.graphics.printf(str, sw/2-w/2, 540, 7000, 'left')
-	
-	love.graphics.setFont(courierCodeBold)
 end
 
 function gameOver:startGame()
