@@ -79,6 +79,7 @@ function topDownController:collisionDetected(cols)
 				local ang = math.atan2(dy, dx)
 				self.phys.vx = math.cos(ang)*400
 				self.phys.vy = math.sin(ang)*400
+				audio:playSound("hit")
 			end
 			if id == "cactus" then self.parent.stats:loseHP(2) end
 			if id == "snake" then self.parent.stats:loseHP(10) end
@@ -95,6 +96,7 @@ function topDownController:collisionDetected(cols)
 			if type == "hat" then self.parent.stats:getHat() end
 			if type == "part" then self.parent.stats:getPart() end
 			if type == "fruit" then self.parent.stats:gainHP(8) end
+			audio:playSound("pickup")
 		end
 
 	end

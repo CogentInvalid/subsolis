@@ -19,6 +19,8 @@ function playerAttack:attack(x, y)
 	x = px + math.cos(ang)*50
 	y = py + math.sin(ang)*50
 	self.game:addEnt(attack, {x=x, y=y, rotation=ang})
+
+	audio:playSound("slash")
 end
 
 return playerAttack
