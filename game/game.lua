@@ -47,6 +47,8 @@ function game:init()
 	self.camMan:setTarget(phys, phys.w/2, phys.h/2)
 	self.camMan:setPos(phys.x+phys.w/2, phys.y+phys.h/2)
 
+	audio:playLooping("overworld")
+
 end
 
 function game:makeLevel()

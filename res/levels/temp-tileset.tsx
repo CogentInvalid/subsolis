@@ -194,6 +194,12 @@
    <property name="type" value="water"/>
   </properties>
  </tile>
+ <tile id="69">
+  <properties>
+   <property name="drawLayer" value="background"/>
+   <property name="type" value="water"/>
+  </properties>
+ </tile>
  <tile id="70">
   <properties>
    <property name="col" type="bool" value="false"/>
@@ -240,6 +246,12 @@
    <property name="type" value="water"/>
   </properties>
  </tile>
+ <tile id="79">
+  <properties>
+   <property name="drawLayer" value="background"/>
+   <property name="type" value="water"/>
+  </properties>
+ </tile>
  <tile id="85">
   <properties>
    <property name="col" type="bool" value="false"/>
@@ -261,7 +273,19 @@
    <property name="type" value="water"/>
   </properties>
  </tile>
+ <tile id="89">
+  <properties>
+   <property name="drawLayer" value="background"/>
+   <property name="type" value="water"/>
+  </properties>
+ </tile>
  <tile id="98">
+  <properties>
+   <property name="drawLayer" value="background"/>
+   <property name="type" value="water"/>
+  </properties>
+ </tile>
+ <tile id="99">
   <properties>
    <property name="drawLayer" value="background"/>
    <property name="type" value="water"/>

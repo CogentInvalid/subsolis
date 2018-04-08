@@ -54,7 +54,7 @@ function snakeAI:startWait()
 end
 
 function snakeAI:wait(dt)
-	self.parent.img.animSpeed = 0.5
+	self.parent.img.animSpeed = 0--0.5
 	self.waitTimer = self.waitTimer - dt
 	if self.waitTimer < 0 then
 		self:startIdle()
@@ -91,7 +91,7 @@ end
 
 function snakeAI:chase(dt)
 	if self.paused then
-		self.parent.img.animSpeed = 0.5
+		self.parent.img.animSpeed = 0--0.5
 		self.timer = self.timer - dt
 		if self.timer < 0 then
 			self.paused = false
