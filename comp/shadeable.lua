@@ -10,9 +10,9 @@ end
 
 function shadeable:update(dt)
 	if self.inShade then
-		self.parent.rect.color = {r=0.2, g=0.5, b=0.2}
+		self.parent.img.color = {r=0.5, g=0.5, b=0.5}
 	else
-		self.parent.rect.color = {r=0.2, g=0.7, b=0.2}
+		self.parent.img.color = {r=1, g=1, b=1}
 	end
 
 	self.inShade = false

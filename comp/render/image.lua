@@ -14,6 +14,7 @@ function image:initialize(args)
 	self.w, self.h = self.img:getDimensions()
 
 	self.sx = args.sx or 1
+	self.sy = args.sy
 
 	self.offx = args.offx or 0
 	self.offy = args.offy or 0
@@ -42,7 +43,7 @@ end
 --draw the image
 function image:draw()
 	renderable.draw(self)
-	local sx = self.sx; local sy = self.sx
+	local sx = self.sx; local sy = self.sy or self.sx
 
 	if self.animation then
 		self.animation:draw(self.img, self.x+self.offx, self.y+self.offy, self.rotation, self.sx, sy, self.ox, self.oy)

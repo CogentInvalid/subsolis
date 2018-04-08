@@ -19,7 +19,7 @@ function game:enter()
 	accum = 0
 	self.paused = false
 	
-	self.drawLayers = {"background", "default"}
+	self.drawLayers = {"background", "default", "player", "foreground"}
 
 	--systems
 	self.system = {}

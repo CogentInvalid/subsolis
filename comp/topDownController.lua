@@ -10,7 +10,7 @@ function topDownController:initialize(args)
 	self.friction = args.friction or 3
 
 	self.walking = false
-	self.lastMove = nil
+	self.lastMove = "down"
 	
 	self.phys = self.parent:getComponent("physics")
 end
@@ -22,21 +22,31 @@ function topDownController:update(dt)
 	local input = self.game.inputMan
 	
 	local movDir = {x=0, y=0}
-	if input:keyDown("left") then movDir.x = movDir.x - 1 end
-	if input:keyDown("right") then movDir.x = movDir.x + 1 end
-	if input:keyDown("up") then movDir.y = movDir.y - 1 end
-	if input:keyDown("down") then movDir.y = movDir.y + 1 end
+	if input:keyDown("left") then movDir.x = movDir.x - 1; self.lastMove = "left" end
+	if input:keyDown("right") then movDir.x = movDir.x + 1; self.lastMove = "right" end
+	if input:keyDown("up") then movDir.y = movDir.y - 1; self.lastMove = "up" end
+	if input:keyDown("down") then movDir.y = movDir.y + 1; self.lastMove = "down" end
 
 	if movDir.x == 0 and movDir.y == 0 then
 		self.walking = false
 	else
+		self.walking = true
 		if self.lastMove == nil then
-			if input:keyDown("left") then self.lastMove = "left" end
-			if input:keyDown("right") then self.lastMove = "right" end
-			if input:keyDown("up") then self.lastMove = "up" end
-			if input:keyDown("down") then self.lastMove = "down" end
+			--if input:keyDown("left") then self.lastMove = "left" end
+			--if input:keyDown("right") then self.lastMove = "right" end
+			--if input:keyDown("up") then self.lastMove = "up" end
+			--if input:keyDown("down") then self.lastMove = "down" end
 		end
 	end
+
+	self.parent.img.animation = self.parent["anim_"..self.lastMove]
+	if self.lastMove == "left" then self.parent.img.sx = -2
+	else self.parent.img.sx = 2 end
+	if self.walking then
+	else
+		self.parent.img.animation:gotoFrame(1)
+	end
+	--debug("anim_"..self.lastMove)
 
 	--movement
 	local xMove = 0; local yMove = 0

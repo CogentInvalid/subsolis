@@ -22,57 +22,72 @@
  <tile id="4">
   <properties>
    <property name="col" type="bool" value="false"/>
+   <property name="drawLayer" value="foreground"/>
   </properties>
  </tile>
  <tile id="5">
   <properties>
    <property name="col" type="bool" value="false"/>
+   <property name="drawLayer" value="foreground"/>
   </properties>
  </tile>
  <tile id="6">
   <properties>
    <property name="col" type="bool" value="false"/>
+   <property name="drawLayer" value="foreground"/>
   </properties>
  </tile>
  <tile id="7">
   <properties>
    <property name="col" type="bool" value="false"/>
+   <property name="drawLayer" value="foreground"/>
   </properties>
  </tile>
  <tile id="10">
   <properties>
    <property name="col" type="bool" value="false"/>
+   <property name="drawLayer" value="foreground"/>
   </properties>
  </tile>
  <tile id="11">
   <properties>
    <property name="col" type="bool" value="false"/>
+   <property name="drawLayer" value="foreground"/>
   </properties>
  </tile>
  <tile id="14">
   <properties>
    <property name="col" type="bool" value="false"/>
+   <property name="drawLayer" value="foreground"/>
   </properties>
  </tile>
  <tile id="15">
   <properties>
    <property name="col" type="bool" value="false"/>
+   <property name="drawLayer" value="foreground"/>
   </properties>
  </tile>
  <tile id="16">
   <properties>
    <property name="col" type="bool" value="false"/>
+   <property name="drawLayer" value="foreground"/>
   </properties>
  </tile>
  <tile id="17">
   <properties>
    <property name="col" type="bool" value="false"/>
+   <property name="drawLayer" value="foreground"/>
   </properties>
  </tile>
  <tile id="22">
   <properties>
    <property name="cactus" value="1"/>
    <property name="type" value="cactus"/>
+  </properties>
+ </tile>
+ <tile id="28">
+  <properties>
+   <property name="drawLayer" value="foreground"/>
   </properties>
  </tile>
  <tile id="30">
@@ -166,26 +181,31 @@
  <tile id="60">
   <properties>
    <property name="col" type="bool" value="false"/>
+   <property name="drawLayer" value="foreground"/>
   </properties>
  </tile>
  <tile id="61">
   <properties>
    <property name="col" type="bool" value="false"/>
+   <property name="drawLayer" value="foreground"/>
   </properties>
  </tile>
  <tile id="62">
   <properties>
    <property name="col" type="bool" value="false"/>
+   <property name="drawLayer" value="foreground"/>
   </properties>
  </tile>
  <tile id="63">
   <properties>
    <property name="col" type="bool" value="false"/>
+   <property name="drawLayer" value="foreground"/>
   </properties>
  </tile>
  <tile id="64">
   <properties>
    <property name="col" type="bool" value="false"/>
+   <property name="drawLayer" value="foreground"/>
   </properties>
  </tile>
  <tile id="68">
@@ -203,41 +223,49 @@
  <tile id="70">
   <properties>
    <property name="col" type="bool" value="false"/>
+   <property name="drawLayer" value="foreground"/>
   </properties>
  </tile>
  <tile id="71">
   <properties>
    <property name="col" type="bool" value="false"/>
+   <property name="drawLayer" value="foreground"/>
   </properties>
  </tile>
  <tile id="72">
   <properties>
    <property name="col" type="bool" value="false"/>
+   <property name="drawLayer" value="foreground"/>
   </properties>
  </tile>
  <tile id="73">
   <properties>
    <property name="col" type="bool" value="false"/>
+   <property name="drawLayer" value="foreground"/>
   </properties>
  </tile>
  <tile id="74">
   <properties>
    <property name="col" type="bool" value="false"/>
+   <property name="drawLayer" value="foreground"/>
   </properties>
  </tile>
  <tile id="75">
   <properties>
    <property name="col" type="bool" value="false"/>
+   <property name="drawLayer" value="foreground"/>
   </properties>
  </tile>
  <tile id="76">
   <properties>
    <property name="col" type="bool" value="false"/>
+   <property name="drawLayer" value="foreground"/>
   </properties>
  </tile>
  <tile id="77">
   <properties>
    <property name="col" type="bool" value="false"/>
+   <property name="drawLayer" value="foreground"/>
   </properties>
  </tile>
  <tile id="78">
@@ -255,16 +283,19 @@
  <tile id="85">
   <properties>
    <property name="col" type="bool" value="false"/>
+   <property name="drawLayer" value="foreground"/>
   </properties>
  </tile>
  <tile id="86">
   <properties>
    <property name="col" type="bool" value="false"/>
+   <property name="drawLayer" value="foreground"/>
   </properties>
  </tile>
  <tile id="87">
   <properties>
    <property name="col" type="bool" value="false"/>
+   <property name="drawLayer" value="foreground"/>
   </properties>
  </tile>
  <tile id="88">
