@@ -91,6 +91,7 @@ end
 
 function playerStats:death()
 	self.parent.die = true
+	self.parent.game:die()
 end
 
 function playerStats:getPart()

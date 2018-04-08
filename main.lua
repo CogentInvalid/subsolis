@@ -13,6 +13,7 @@ audio = require "audio"
 gameMode = {}
 gameMode.mainMenu = require "menu/mainMenu"
 gameMode.game = require "game/game"
+gameMode.lose = require "menu/gameOver"
 
 --other things
 debugger = require "debugger"
@@ -46,7 +47,7 @@ function love.load()
 		'keypressed', 'keyreleased',
 		'mousepressed', 'mousereleased',
 	}
-	gamestate.switch(gameMode.mainMenu)
+	gamestate.switch(gameMode.lose)
 end
 
 function love.update(dt)

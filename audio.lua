@@ -11,7 +11,7 @@ function audio:playLooping(name)
 	path = path or self.path
 	
 	local source = love.audio.newSource(path[1] .. name .. path[2], "stream")
-	if self.loopingSources[name] ~= nil then self.sources[name]:stop() end
+	if self.loopingSources[name] ~= nil then self.loopingSources[name]:stop() end
 	self.loopingSources[name] = source
 	source:setLooping(true)
 	love.audio.play(source)

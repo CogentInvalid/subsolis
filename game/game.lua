@@ -10,7 +10,7 @@ local wall = require "ent/wall"
 
 local game = {}
 
-function game:init()
+function game:enter()
 
 	love.graphics.setBackgroundColor(252/255, 231/255, 133/255)
 
@@ -75,6 +75,16 @@ function game:loadLevel(name)
 	local phys = self.player:getComponent("physics")
 	self.camMan:setTarget(phys, phys.w/2, phys.h/2)
 	self.camMan:setPos(phys.x+phys.w/2, phys.y+phys.h/2)
+end
+
+function game:die()
+	self.system[#self.system+1] = {
+		timer=1,
+		update = function(self, dt)
+			self.timer = self.timer - dt
+			if self.timer < 0 then gamestate.switch(gameMode.lose) end
+		end
+	}
 end
 
 function game:reset()
